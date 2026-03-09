@@ -1,18 +1,19 @@
-name: furst-job
+name: second workflow
 on: 
-   push: 
-      branches:
-        - "main"
-jobs: 
-  first-workflow-job:
-    name: first
-    runs-on: ubuntu-latest
-    steps:
-      - name:  run bash command 
-        run: echo "hello this is my first step from my first job of my firft workflow"
-  second-workflow-job:
-    name: second
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "i created this my self"      
+  push:
+    branches: ["main"]   
+jobs:
+     first-workflow-job:
+         name:  first
+         runs-on: ubuntu
+         steps:
+           - name: first step 
+             run: echo "hello from my secondworkflow"
+             shell: bash
+           - name: second step  
+             run: ls 
+             uses: actions/checkout@v6
+             shell: bash 
+
+
              
