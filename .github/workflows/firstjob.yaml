@@ -13,13 +13,13 @@ jobs:
         shell: bash  
       - name: second step
         uses:   actions/checkout@v6    
-      - name: tryagain
+      - name: action checkout 
         run : ls
         shell: bash       
-      # - name: tryagain
-      #   run : 'mvn clean package'
-      #   shell: bash  
+      - name:  running the java code
+        run :  mvn clean package
+        shell: bash  
+      - name : test    
+        run : mvn test 
+        shell: bash 
            
-      # - name: tryagain
-      #   run : 'mvn test'
-      #   shell: bash     
