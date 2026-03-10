@@ -15,5 +15,8 @@ jobs:
         uses:   actions/checkout@v6    
       
       - name: tryagain
-        run: ls
+        run : 'mnv clean package'
+        shell: bash     
+      - name: tryagain
+        run : 'mnv test'
         shell: bash     
