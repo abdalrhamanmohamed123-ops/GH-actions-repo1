@@ -1,0 +1,13 @@
+name: second-workflow
+on: 
+   schedule:
+     - cron: "*/2 * * * *"
+jobs: 
+   first-job:
+     -  name: first schedule job 
+        runs-on: ubuntu 
+        steps:
+          - name: first step 
+            run: echo "iam here " ;  ls  
+            shell: bash
+            

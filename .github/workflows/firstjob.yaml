@@ -16,10 +16,5 @@ jobs:
       - name: action checkout 
         run : ls
         shell: bash       
-      - name:  running the java code
-        run :  mvn clean package
-        shell: bash  
-      - name : test    
-        run : mvn test 
-        shell: bash 
+    
            
