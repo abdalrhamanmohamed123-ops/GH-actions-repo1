@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu 
         steps:
           - name: first step 
-            run:  echo "i am here" ; ls 
+            run:  echo "i am here" 
             # | 
             #         echo "iam here " 
             #          ls  
