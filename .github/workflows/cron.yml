@@ -9,8 +9,8 @@ jobs:
         steps:
           - name: first step 
             run: | 
-                 echo "iam here " 
-                  ls  
+                    echo "iam here " 
+                     ls  
             shell: bash
             name: second-workflow
 
