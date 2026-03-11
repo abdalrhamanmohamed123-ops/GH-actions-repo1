@@ -8,6 +8,8 @@ jobs:
         runs-on: ubuntu 
         steps:
           - name: first step 
-            run: echo "iam here " ;  ls  
+            run: | 
+                 echo "iam here " 
+                  ls  
             shell: bash
             
