@@ -3,14 +3,14 @@ on:
    schedule:
      - cron: "*/2 * * * *"
 jobs: 
-   first-job:
-        name: first schedule job 
+   first-job: 
         runs-on: ubuntu 
         steps:
           - name: first step 
-            run: | 
-                    echo "iam here " 
-                     ls  
+            run:  echo "i am here" ; ls 
+            # | 
+            #         echo "iam here " 
+            #          ls  
             shell: bash
             name: second-workflow
 
