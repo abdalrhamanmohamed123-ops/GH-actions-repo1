@@ -12,7 +12,7 @@ jobs:
             #         echo "iam here " 
             #          ls  
             shell: bash
-            name: second-workflow
+            # name: second-workflow
 
 # on:
 #   schedule:
