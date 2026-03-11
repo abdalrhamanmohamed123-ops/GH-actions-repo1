@@ -1,10 +1,10 @@
 name: second-workflow
 on: 
    schedule:
-     - cron: "*/2 * * * *"
+     - cron: "* * * * *"
 jobs: 
    first-job: 
-        runs-on: ubuntu 
+        runs-on: ubuntu-latest 
         steps:
           - name: first step 
             run:  echo "i am here" 
