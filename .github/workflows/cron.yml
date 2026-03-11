@@ -4,7 +4,7 @@ on:
      - cron: "*/2 * * * *"
 jobs: 
    first-job:
-     -  name: first schedule job 
+        name: first schedule job 
         runs-on: ubuntu 
         steps:
           - name: first step 
@@ -12,4 +12,18 @@ jobs:
                  echo "iam here " 
                   ls  
             shell: bash
-            
+            name: second-workflow
+
+# on:
+#   schedule:
+#     - cron: "*/2 * * * *"
+
+# jobs:
+#   first-job:                # Removed the hyphen here
+#     runs-on: ubuntu-latest  # Moved this out of the list and fixed the name
+#     steps:
+#       - name: first step
+#         run: |
+#           echo "iam here"
+#           ls
+#         shell: bash
