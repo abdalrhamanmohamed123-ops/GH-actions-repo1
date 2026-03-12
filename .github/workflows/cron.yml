@@ -1,7 +1,8 @@
 name: second-workflow
 on: 
-   schedule:
-     - cron: "* * * * *"
+   push:
+     branches:
+       - "main"
 jobs: 
    first-job: 
         runs-on: ubuntu-latest 
