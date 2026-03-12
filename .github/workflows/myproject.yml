@@ -21,4 +21,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Test AWS Access
-        run: aws s3 ls  # Now you have temporary, secretless access!
+        run: aws s3 ls 
