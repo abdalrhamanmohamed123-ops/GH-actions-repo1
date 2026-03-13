@@ -1,0 +1,58 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+spec:
+  containers:
+    - image: nginx
+      name: cont1
+      resources:
+        requests:
+          cpu: "250m"
+          memory: "512Mi"
+        limits:
+          cpu: "500m"
+          memory: "750Mi"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy1
+spec:
+  replicas: 1  
+  selector:
+    matchLabels:
+     env: prod
+  template: 
+     metadata:
+       labels:
+         env: prod
+     spec:
+       containers:
+         - name: cont1
+           image: vish/stress
+           args:
+             - -cpus
+             - ".6" #must be a intiger number like 1 2 3 4
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-app-hpa
+  namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: deploy1  # The name of your deployment
+  minReplicas: 1
+  maxReplicas: 2
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 80  # Scale up if CPU goes over 60%     
+---
