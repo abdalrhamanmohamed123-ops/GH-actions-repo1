@@ -1,13 +1,15 @@
-name: first_workflow_for_revision
-on: 
-   repository_dispatch:
-      types: [test]
+name: Receiver Workflow
+
+on:
+  repository_dispatch:
+    types: [test]
+  workflow_dispatch: # Allows you to trigger it manually for testing
+
 jobs:
-   first_job_here:
-      runs-on: ubuntu-latest
-      name: first_job 
-      steps: 
-        - name: first_step
-          shell: bash 
-          run: echo "goo goo"
-           
+  display_message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: |
+          echo "goo goo"
+          echo "Dispatch received successfully!"
