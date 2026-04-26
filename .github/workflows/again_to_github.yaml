@@ -1,1 +1,16 @@
-
+name: first_workflow_for_revision
+on: 
+   repository_dispatch:
+      types: 
+        - test
+jobs:
+   first_job_here:
+      runs-on: ubuntu-latest
+      name: first_job 
+      steps: 
+        - name: first_step
+          shell: bash 
+          run: |
+           ls 
+           pwd
+           echo "hello i am here"
