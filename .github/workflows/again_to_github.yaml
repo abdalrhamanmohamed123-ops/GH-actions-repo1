@@ -1,8 +1,7 @@
 name: first_workflow_for_revision
 on: 
    repository_dispatch:
-      types: 
-        - test
+      types: [test]
 jobs:
    first_job_here:
       runs-on: ubuntu-latest
